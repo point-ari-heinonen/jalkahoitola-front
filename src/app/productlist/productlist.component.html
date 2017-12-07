@@ -1,0 +1,11 @@
+<h2>Ryhmään kuuluvat tuotteet:</h2>
+
+
+<ul class="productlist">
+    <li *ngFor="let product of products"
+        [class.selected] = "product === selectedProduct"
+        (click)="onProductSelect(product)">
+        <span class="badge>">{{product.GroupId}}</span>{{product.Nmae}}
+        testi
+    </li>
+</ul>
