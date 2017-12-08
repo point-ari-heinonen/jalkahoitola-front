@@ -4,18 +4,13 @@ import { ProductGroup } from '../classes';
 import { HttpClient } from '@angular/common/http';
 import { OnChanges } from '@angular/core';
 
-
-
-
 @Component({
   selector: 'app-productlist',
   templateUrl: './productlist.component.html',
   styleUrls: ['./productlist.component.css']
 })
 export class ProductListComponent implements OnChanges{
-  
   @Input() groupId: string;
-  
   constructor(private httpClient: HttpClient){}
   getProductsInGroupUrl: string='http://pointfootapi.azurewebsites.net/api/getproductsingroup/';
   products: Product[];
@@ -31,25 +26,20 @@ export class ProductListComponent implements OnChanges{
       }
     )
   }
-
   onProductSelect(product: Product){
     this.selectedProduct=product;
     console.log("onProductSelect");
   }
-  
  ngOnChanges(): void{
   console.log("productlist.component.ts ngOnChanges groupid: " + this.groupId);
-  this.getProductsInGroup(this.groupId);
-
+  if(this.groupId != undefined){
+    this.getProductsInGroup(this.groupId);
+   }
  }
-  
+ /*
   ngOnInit(): void {
     console.log("productlist.component.ts ngOnInit: " + this.groupId);
     this.getProductsInGroup(this.groupId);
-    
   }
-  
-  
-  
-
+  */
 }

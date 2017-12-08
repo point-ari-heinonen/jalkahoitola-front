@@ -22,8 +22,6 @@ export class AppComponent implements OnInit{
   products: Product[];
   selectedProductGroup: Number;
   //onProductGroupKeyUp(event: any){ this.productGroupId=event.target.value;  }
-  
-  
   getProductGroup(id: any){
     console.log(this.productGroupId);
     this.httpClient.get(this.productGroupUrl+id)
@@ -31,8 +29,6 @@ export class AppComponent implements OnInit{
       (data:ProductGroup[]) => {
         console.log(data);
         this.productGroups=data;
-
-
       }
     )
   }
@@ -41,7 +37,6 @@ export class AppComponent implements OnInit{
     this.selectedProductGroup=productGroup;
     console.log("app.component.ts onSelect:" + this.selectedProductGroup);
   }
-  
   ngOnInit(): void {
     this.getProductGroup(0);
          
