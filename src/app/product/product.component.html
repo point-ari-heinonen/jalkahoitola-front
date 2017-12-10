@@ -1,12 +1,14 @@
 
-<div *ngIf="productId">
-<p>Tuotteen tiedot</p>
-<button (click)="getProduct(productId)">Hae tuote</button>
+<div class="container">
+<p>{{productId}}</p>
+                    <ul class="product">
+                            <li *ngFor="let item of oneProduct">
+                                <span class="badge>">{{item.GroupId}}</span>{{item.Nmae}}
+                                {{item.ProductId}}
+                            </li>
+                    </ul>
 
-<ul class="product">
-        <li *ngFor="let item of oneProduct">
-            <span class="badge>">{{item.GroupId}}</span>{{item.Nmae}}
-            {{item.ProductId}}
-        </li>
-    </ul>
+                    
+                
 </div>
+                        

@@ -11,10 +11,37 @@ import { OnChanges } from '@angular/core';
 })
 export class ProductListComponent implements OnChanges{
   @Input() groupId: string;
+  
   constructor(private httpClient: HttpClient){}
   getProductsInGroupUrl: string='http://pointfootapi.azurewebsites.net/api/getproductsingroup/';
   products: Product[];
   selectedProduct: Product;
+  
+  
+ /******************************************/  
+  addProductName: string;
+  addProductDescription: string;
+  addProductQuantity: number;
+  addProductUnitOfMeasure: string;
+  addProductEntery_Date: Date;
+  addProductExpire: Date;
+  addProductPerson_Name: string;
+  
+  onAddProductNameKeyUp(event: any){this.addProductName=event.target.value;}
+  onAddProductDescriptionKeyUp(event: any){ this.addProductDescription=event.target.value;}
+  onAddProductQuantityKeyUp(event: any){ this.addProductQuantity=event.target.value;}
+  onAddProductUnitOfMeasureKeyUp(event: any){ this.addProductUnitOfMeasure=event.target.value;}
+  onAddProductEntery_DateKeyUp(event: any){ this.addProductEntery_Date=event.target.value;}
+  onAddProductExpireKeyUp(event: any){ this.addProductExpire=event.target.value;}
+  onAddProductPerson_NameKeyUp(event: any){ this.addProductPerson_Name=event.target.value;}
+   
+  
+  submitProduct(){
+    console.log("submitProduct "+this.addProductName);
+  }
+ 
+ /******************************************/
+ 
   getProductsInGroup(id: any){
     console.log("getProductsIngroup id:"+id);
     this.httpClient.get(this.getProductsInGroupUrl+id)
@@ -22,7 +49,6 @@ export class ProductListComponent implements OnChanges{
       (data: Product[])=> {
         console.log(data);
         this.products=data;
-        
       }
     )
   }
@@ -36,10 +62,13 @@ export class ProductListComponent implements OnChanges{
     this.getProductsInGroup(this.groupId);
    }
  }
- /*
+ 
   ngOnInit(): void {
     console.log("productlist.component.ts ngOnInit: " + this.groupId);
+    if(this.groupId != undefined){
     this.getProductsInGroup(this.groupId);
+    }
+
   }
-  */
+  
 }

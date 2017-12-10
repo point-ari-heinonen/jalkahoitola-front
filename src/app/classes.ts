@@ -16,4 +16,3 @@ export class Product {
     Recieved_ammount: number;
 }
   
-  

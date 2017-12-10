@@ -42,11 +42,11 @@ export class ProductComponent implements OnChanges{
         }
     
     }
-    /*
+    
     ngOnInit(): void{
         console.log("product.component ngOnInit:" + this.productId)
         this.getProduct(this.productId);
 
     }
-    */
+    
 }
