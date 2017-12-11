@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, NgModule } from '@angular/core';
 import { Product } from '../classes';
 import { ProductGroup } from '../classes';
 import { HttpClient } from '@angular/common/http';
 import { OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-productlist',
-  templateUrl: './productlist.component.html',
-  styleUrls: ['./productlist.component.css']
+  selector: 'app-addproduct',
+  templateUrl: './addproduct.component.html',
+  styleUrls: ['./addproduct.component.css']
 })
-export class ProductListComponent implements OnChanges{
-  @Input() groupId: string;
+export class AddProductComponent implements OnInit{
+  @Input() groupId2: string;
   
   constructor(private httpClient: HttpClient){}
   getProductsInGroupUrl: string='http://pointfootapi.azurewebsites.net/api/getproductsingroup/';
@@ -58,16 +58,16 @@ export class ProductListComponent implements OnChanges{
     console.log("onProductSelect");
   }
  ngOnChanges(): void{
-  console.log("productlist.component.ts ngOnChanges groupid: " + this.groupId);
-  if(this.groupId != undefined){
-    this.getProductsInGroup(this.groupId);
+  console.log("productlist.component.ts ngOnChanges groupid: " + this.groupId2);
+  if(this.groupId2 != undefined){
+    this.getProductsInGroup(this.groupId2);
    }
  }
  
   ngOnInit(): void {
-    console.log("productlist.component.ts ngOnInit: " + this.groupId);
-    if(this.groupId != undefined){
-    this.getProductsInGroup(this.groupId);
+    console.log("productlist.component.ts ngOnInit: " + this.groupId2);
+    if(this.groupId2 != undefined){
+    this.getProductsInGroup(this.groupId2);
     }
 
   }

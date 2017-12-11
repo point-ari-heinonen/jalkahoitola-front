@@ -14,6 +14,7 @@
     <span class="badge">{{productGroup.GroupId}}</span>{{productGroup.Name}}
   </li>
 </ul>
+<app-addproduct [groupId2]="selectedProductGroup"></app-addproduct>
+<app-productlist [groupId]="selectedProductGroup">Loading groups...</app-productlist>
 
-<app-productlist [groupId]="selectedProductGroup"></app-productlist>
 

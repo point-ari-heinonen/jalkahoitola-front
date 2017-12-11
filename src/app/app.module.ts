@@ -6,12 +6,14 @@ import { FormsModule} from '@angular/forms';
 
 import {ProductListComponent} from './productlist/productlist.component';
 import {ProductComponent} from './product/product.component';
+import {AddProductComponent} from './addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
