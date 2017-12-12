@@ -7,18 +7,21 @@ import { FormsModule} from '@angular/forms';
 import {ProductListComponent} from './productlist/productlist.component';
 import {ProductComponent} from './product/product.component';
 import {AddProductComponent} from './addproduct/addproduct.component';
+import {InterceptorModule} from './services/interceptor.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

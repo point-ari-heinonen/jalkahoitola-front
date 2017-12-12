@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, NgModule } from '@angular/core';
 import { Product } from '../classes';
 import { ProductGroup } from '../classes';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OnChanges } from '@angular/core';
 
 @Component({
@@ -14,17 +14,21 @@ export class AddProductComponent implements OnInit{
   
   constructor(private httpClient: HttpClient){}
   getProductsInGroupUrl: string='http://pointfootapi.azurewebsites.net/api/getproductsingroup/';
+  postAddProductUrl: string='http://pointfootapi.azurewebsites.net/api/product';
   products: Product[];
   selectedProduct: Product;
   addProduct = new Product;
   
-
-  
+   
   submitProduct(){
+      this.addProduct.Nmae = "posttest";
+      this.addProduct.Description = "postdesc";
+      this.addProduct.GroupId = 13;
+      this.addProduct.Quantity = 123;
     console.log("submitProduct "+this.addProduct.Nmae);
-    
-  }
- 
+    this.httpClient.post(this.postAddProductUrl,this.addProduct)
+    .subscribe();
+   }
   getProductsInGroup(id: any){
     console.log("getProductsIngroup id:"+id);
     this.httpClient.get(this.getProductsInGroupUrl+id)
@@ -32,6 +36,7 @@ export class AddProductComponent implements OnInit{
       (data: Product[])=> {
         console.log(data);
         this.products=data;
+
       }
     )
   }
