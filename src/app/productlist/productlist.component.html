@@ -22,7 +22,7 @@
           <tr *ngFor="let product of products"
                [class.selected] = "product.ProductId === selectedProduct"
                (click)="onProductSelect(product.ProductId)">
-            <th scope="row">{{product.ProductId}}</th>
+            <th scope="row"><app-product [productId]="selectedProduct"></app-product></th>
             <td>{{product.Nmae}}</td>
             <td>{{product.Description}}</td>
             <td>{{product.Quantity}}</td>
