@@ -8,6 +8,7 @@ import {ProductListComponent} from './productlist/productlist.component';
 import {ProductComponent} from './product/product.component';
 import {AddProductComponent} from './addproduct/addproduct.component';
 import {InterceptorModule} from './services/interceptor.module';
+import { ReceivedAmountComponent } from './received-amount/received-amount.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {InterceptorModule} from './services/interceptor.module';
     ProductListComponent,
     ProductComponent,
     AddProductComponent,
+    ReceivedAmountComponent,
     
   ],
   imports: [

@@ -19,6 +19,7 @@
           </tr>
         </thead>
         <tbody>
+
           <tr *ngFor="let product of products"
                [class.selected] = "product.ProductId === selectedProduct"
                (click)="onProductSelect(product.ProductId)">
@@ -27,15 +28,20 @@
             <td>{{product.Description}}</td>
             <td>{{product.Quantity}}</td>
             <td>{{product.UnitOfMeasure}}</td>
+            <!--
             <td>{{product.Entery_Date}}</td>
             <td>{{product.Expire}}</td>
             <td>{{product.Person_Name}}</td>
             <td>{{product.Recieved_ammount}}</td>
+            -->
+            <td><app-received-amount [productId2]="product.ProductId"></app-received-amount></td>
+            
+
           </tr>
         </tbody>
       </table>
     </div>
-    
+    <app-received-amount></app-received-amount>
     <app-product [productId]="selectedProduct"></app-product>
 <!-- Here's a another possible approach
 <ul class="productlist">
