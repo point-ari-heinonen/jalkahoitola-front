@@ -12,9 +12,9 @@
             <th scope="col">#</th>
             <th scope="col">Nimi</th>
             <th scope="col">Kuvaus</th>
-            <th scope="col">Varastosaldo</th>
+            <th scope="col">Pakkauksen koko</th>
             <th scope="col">Pakkauksen tiedot</th>
-            <th scope="col">Erän saapumispäivä</th>
+            <th scope="col">Tuotteet varastossa</th>
             <th scope="col">Tuotteen vanhenemispäivä</th>
           </tr>
         </thead>
@@ -23,33 +23,14 @@
           <tr *ngFor="let product of products"
                [class.selected] = "product.ProductId === selectedProduct"
                (click)="onProductSelect(product.ProductId)">
-            <th scope="row"><app-product [productId]="selectedProduct"></app-product></th>
+            <th><app-product [productId]="selectedProduct"></app-product></th>
             <td>{{product.Nmae}}</td>
             <td>{{product.Description}}</td>
             <td>{{product.Quantity}}</td>
             <td>{{product.UnitOfMeasure}}</td>
-            <!--
-            <td>{{product.Entery_Date}}</td>
-            <td>{{product.Expire}}</td>
-            <td>{{product.Person_Name}}</td>
-            <td>{{product.Recieved_ammount}}</td>
-            -->
             <td><app-received-amount [productId2]="product.ProductId"></app-received-amount></td>
-            
-
-          </tr>
+           </tr>
         </tbody>
       </table>
     </div>
-    <app-received-amount></app-received-amount>
-    <app-product [productId]="selectedProduct"></app-product>
-<!-- Here's a another possible approach
-<ul class="productlist">
-        <li *ngFor="let product of products"
-            [class.selected] = "product.ProductId === selectedProduct"
-            (click)="onProductSelect(product.ProductId)">
-            <span class="badge>">{{product.GroupId}}</span>{{product.Nmae}}
-            {{product.ProductId}}
-        </li>
-    </ul>
-    -->
+    

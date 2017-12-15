@@ -16,11 +16,14 @@
         <h4 class="modal-title">Modal Header</h4>
       </div>
       <div class="modal-body">
+         <H2> Here comes the detailed information about the product</H2>
           <ul class="product">
               <li *ngFor="let item of oneProduct">
                   <span class="badge>">{{item.GroupId}}</span>{{item.Nmae}}
                   {{item.ProductId}}
-              </li>
+                  <app-received-amount [productId2]="item.ProductId"></app-received-amount>              
+                </li>
+              
       </ul>
       </div>
       <div class="modal-footer">

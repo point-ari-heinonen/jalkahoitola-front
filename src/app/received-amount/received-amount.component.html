@@ -1,3 +1,8 @@
-<p>
-  received-amount works! {{productId2}}
-</p>
+
+  <ul *ngFor="let shipment of shipments">
+    <li>Hinta: {{shipment.Price}}</li>
+    <li>Päivämäärä: {{shipment.Date}}</li>
+    <li>Vanhenemispäivä: {{shipment.ExpireDate}}</li>
+    <li>Tuotteen valmistaja: {{shipment.VendorName}}</li>
+ </ul>
+

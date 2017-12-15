@@ -10,11 +10,13 @@ import { HttpClient } from '@angular/common/http';
 export class ReceivedAmountComponent implements OnInit {
   @Input() productId2: number;
   shipments: ReceivedAmount[];
+  shipment: ReceivedAmount;
   constructor(private httpClient: HttpClient) { }
   getShipmentUrl: string = 'http://pointfootapi.azurewebsites.net/api/shipmentsforproduct/'
   
 
   getShipment(id: any){
+    console.log("GETSHIPMENT:" + id)
     this.httpClient.get(this.getShipmentUrl+id)
     .subscribe(
       (data: ReceivedAmount[])=>{
@@ -22,6 +24,7 @@ export class ReceivedAmountComponent implements OnInit {
         this.shipments=data;
       }
     )
+    
   }
 
   ngOnInit() {

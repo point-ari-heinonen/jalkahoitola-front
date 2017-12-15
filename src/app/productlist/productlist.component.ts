@@ -19,6 +19,7 @@ export class ProductListComponent implements OnChanges{
   selectedProduct: Product;
   
   
+  
   getProductsInGroup(id: any){
     console.log("getProductsIngroup id:"+id);
     this.httpClient.get(this.getProductsInGroupUrl+id)

@@ -18,7 +18,8 @@ export class ProductComponent implements OnChanges{
     constructor(private httpClient: HttpClient){}
     productUrl: string='http://pointfootapi.azurewebsites.net/api/product/';
     oneProduct: Product[];
-    testi: string;
+    productId2: string;
+    
 
 
     getProduct(id: any){
