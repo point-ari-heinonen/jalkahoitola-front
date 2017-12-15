@@ -15,4 +15,15 @@ export class Product {
     Person_Name: string;
     Recieved_ammount: number;
 }
+
+export class ReceivedAmount {
+    
+        productId: number;
+        date: Date;
+        expireDate: Date;
+        price: number;
+        vendorName: string;
+        locationCode: string;
+
+}
   
