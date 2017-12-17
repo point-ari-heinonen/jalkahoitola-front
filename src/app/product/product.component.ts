@@ -23,7 +23,7 @@ export class ProductComponent implements OnChanges{
 
 
     getProduct(id: any){
-        console.log("OOOOOOOOOOOOOOOOO getProduct id:"+id);
+        console.log("getProduct id:"+id);
         this.httpClient.get(this.productUrl+id)
         .subscribe(
           (data: Product[])=> {
