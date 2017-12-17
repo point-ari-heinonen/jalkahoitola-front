@@ -24,6 +24,9 @@ export class ReceivedAmount {
         price: number;
         vendorName: string;
         locationCode: string;
+        unitStock: number;
 
 }
+
+
   

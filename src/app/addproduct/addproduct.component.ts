@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, NgModule } from '@angular/core';
+import { Component, OnInit, Input, NgModule, group } from '@angular/core';
 import { Product } from '../classes';
 import { ProductGroup } from '../classes';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { OnChanges } from '@angular/core';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddProductComponent implements OnInit{
-  @Input() groupId2: string;
+  @Input() groupId2: number;
   
   constructor(private httpClient: HttpClient){}
   getProductsInGroupUrl: string='http://pointfootapi.azurewebsites.net/api/getproductsingroup/';
@@ -19,12 +19,12 @@ export class AddProductComponent implements OnInit{
   selectedProduct: Product;
   addProduct = new Product;
   
-   
+  submitted = false;
+  onSubmit() { this.submitted = true; } 
+  
+  
   submitProduct(){
-      this.addProduct.Nmae = "posttest";
-      this.addProduct.Description = "postdesc";
-      this.addProduct.GroupId = 13;
-      this.addProduct.Quantity = 123;
+    this.addProduct.GroupId = this.groupId2;
     console.log("submitProduct "+this.addProduct.Nmae);
     this.httpClient.post(this.postAddProductUrl,this.addProduct)
     .subscribe();
