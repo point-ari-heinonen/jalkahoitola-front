@@ -5,6 +5,14 @@
     
     background-color: #FFFFFF;
   }
+
+  table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+  
   
   .modal-body {
     position: relative;
@@ -24,6 +32,7 @@
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  width: 25em;
 }
 
 
