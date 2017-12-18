@@ -7,5 +7,6 @@
     <li>Saapumiserän id: {{shipment.SaapumiseranId}}</li>
     
     <li>Määrä: {{shipment.UnitStock}}</li>
+    <li><button type="submit" class="btn btn-info" (click)="takeProductFromStock(shipment.SaapumiseranId)">Ota tuote</button></li>
  </ul>
 
