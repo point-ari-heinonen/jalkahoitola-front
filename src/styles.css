@@ -6,7 +6,29 @@
     background-color: #FFFFFF;
   }
   
-  
+  .modal-body {
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 15px;
+}
+
+.product li {
+  cursor: pointer;
+  position: left;
+  font-size: large;
+  left: 0;
+  background-color: #EEE;
+  color: black;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+
+
+
   
   
   .productgroups {
@@ -19,10 +41,13 @@
       border: 1px solid black;
     }
   
-  
+    .container{
+      background-image: linear-gradient(#69B5F8, #DAEFF7);
+      
+    }
     
-     .container {
-        background-image: linear-gradient(#69B5F8, #DAEFF7); 
+     .container { 
+      
         float: center;
         width: 100%;
         display: flex;
@@ -124,23 +149,41 @@
   }
   
   
-  /*addrpoduct.component.html <div class="container" > muutettu <div class="Addcontainer" >*/
+  /*addrpoduct.component.html <div class="container" > muutettu <div class="Addcontainer"  */
   .Addcontainer {
     width: 80%;
     border: 1px solid black;
     float: right; 
+    background-color: #FFFFFF;
   }
   .Addcontainer .container {
       width: 90%;
       font-size: 20px;
       color: black;
-      
+      background-color: #FFFFFF;
+  }
+  #addProductDiv {
+    background-color: #FFFFFF;
+  }
 
+  .addproduct .text {
+    position: relative;
+    top: -3px;
+    background-color: #FFFFFF;
   }
   
+
+
   
-  
-  /* Porductlist TEST, productcomponen.css, commented off there*/
+
+
+
+
+
+
+
+
+  /* Porductlist TEST, productcomponen.css, commented off there
   
   .selected {
     background-color: #CFD8DC !important;
@@ -190,5 +233,5 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-  
-  
+  */
+
