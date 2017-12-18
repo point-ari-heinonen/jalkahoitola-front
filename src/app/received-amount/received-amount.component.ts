@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, OnChanges } from '@angular/core';
 import {ReceivedAmount} from '../classes';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,8 +13,15 @@ export class ReceivedAmountComponent implements OnInit {
   shipment: ReceivedAmount;
   constructor(private httpClient: HttpClient) { }
   getShipmentUrl: string = 'http://pointfootapi.azurewebsites.net/api/shipmentsforproduct/'
-  
+  takeProductFromStockUrl: string ="http://pointfootapi.azurewebsites.net/api/reduceproduct?saapumiseranid="
 
+  takeProductFromStock(id: any){
+    console.log("takeProductFromStock:" + id)
+    this.httpClient.get(this.takeProductFromStockUrl+id)
+    .subscribe( );
+    
+
+  }
   getShipment(id: any){
     console.log("GETSHIPMENT:" + id)
     this.httpClient.get(this.getShipmentUrl+id)
@@ -29,6 +36,9 @@ export class ReceivedAmountComponent implements OnInit {
 
   ngOnInit() {
    this.getShipment(this.productId2);
+  }
+  ngOnChange(){
+    this.getShipment(this.productId2);
   }
 
 }
