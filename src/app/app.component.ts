@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, NgModule, OnChanges, group } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductGroup } from './classes';
 import { Product } from './classes';
@@ -12,6 +12,7 @@ import {Response}  from '@angular/http';
   
 })
 export class AppComponent implements OnInit{
+  @Input() groupId: number;
   title = 'Foot (title variable)';
   productGroupUrl: string='http://pointfootapi.azurewebsites.net/api/productgroup/';
   getProductsInGroupUrl: string='http://pointfootapi.azurewebsites.net/api/getproductsingroup/';
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit{
   productGroups: ProductGroup[];
   products: Product[];
   selectedProductGroup: Number;
+  addGroup = new ProductGroup;
   //onProductGroupKeyUp(event: any){ this.productGroupId=event.target.value;  }
   getProductGroup(id: any){
     console.log(this.productGroupId);
@@ -33,6 +35,12 @@ export class AppComponent implements OnInit{
     )
   }
 
+  submitGroupProduct(){
+    this.addGroup.id = this.groupId;
+    console.log("submitGroupProduct "+this.addGroup.id);
+    this.httpClient.post(this.productGroupUrl,this.addGroup)
+    .subscribe();
+  }
   onSelect(productGroup: Number): void {
     this.selectedProductGroup=productGroup;
     console.log("app.component.ts onSelect:" + this.selectedProductGroup);
