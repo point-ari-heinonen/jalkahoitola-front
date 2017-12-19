@@ -19,6 +19,7 @@ export class ReceivedAmountComponent implements OnInit {
     console.log("takeProductFromStock:" + id)
     this.httpClient.get(this.takeProductFromStockUrl+id)
     .subscribe( );
+    this.getShipment(this.productId2);
     
 
   }
