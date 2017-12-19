@@ -1,5 +1,6 @@
-
-  <ul *ngFor="let shipment of shipments">
+<h2>Amount updated: {{isUpdatedFlag}}</h2>
+<h2>List updated: {{isUpdatedListFlag}}</h2>  
+<ul *ngFor="let shipment of shipments">
     <li>Hinta: {{shipment.Price}}</li>
     <li>Päivämäärä: {{shipment.Date}}</li>
     <li>Vanhenemispäivä: {{shipment.ExpireDate}}</li>
