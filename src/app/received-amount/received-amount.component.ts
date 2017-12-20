@@ -18,20 +18,13 @@ export class ReceivedAmountComponent implements OnInit {
   getShipmentUrl: string = 'http://pointfootapi.azurewebsites.net/api/shipmentsforproduct/'
   takeProductFromStockUrl: string ="http://pointfootapi.azurewebsites.net/api/reduceproduct?saapumiseranid="
 
-  async takeProductFromStock(id: any){
+  takeProductFromStock(id: any){
     console.log("takeProductFromStock:" + id)
-     await this.httpClient.get(this.takeProductFromStockUrl+id)
-    .subscribe((data: number)=>{
-      this.isUpdatedFlag=data;
+    this.httpClient.get(this.takeProductFromStockUrl+id)
+    .subscribe((data: ReceivedAmount[])=>{
+    this.shipments=data;
     } );
-    this.isUpdatedListFlag=0;
-  
     
-     this.getShipment(this.productId2);
-    
-    
-    
-
   }
   getShipment(id: any){
     console.log("GETSHIPMENT:" + id)
@@ -40,29 +33,14 @@ export class ReceivedAmountComponent implements OnInit {
       (data: ReceivedAmount[])=>{
         console.log(data);
         this.shipments=data;
-        this.isUpdatedListFlag=1;
+      
       }
     )
-    
+ }
+  ngOnInit() {
+   this.getShipment(this.productId2);
   }
-
-   async ngOnInit() {
-   await this.getShipment(this.productId2);
+  ngOnChange(){
+    this.getShipment(this.productId2);
   }
-  
-  async ngOnChange(){
-    await this.getShipment(this.productId2);
-  }
-  
 }
-
-/*
-getProductsInGroup(id: any){
-  console.log("getProductsIngroup id:"+id);
-  this.httpClient.get(this.getProductsInGroupUrl+id)
-  .subscribe(
-    (data: Product[])=> {
-      console.log(data);
-      this.products=data;
-    }
-    */
