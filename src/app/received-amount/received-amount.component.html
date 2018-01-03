@@ -1,5 +1,31 @@
 <h2>Amount updated: {{isUpdatedFlag}}</h2>
-<h2>List updated: {{isUpdatedListFlag}}</h2>  
+<h2>List updated: {{isUpdatedListFlag}}</h2>
+
+
+
+<table>
+    <tr>
+        <th>Hinta</th>
+        <th>Päivämäärä</th>
+        <th>Vanhenemispäivä</th>
+        <th>Tuotteen valmistaja</th>
+        <th>Saapumiserän id</th>
+        <th>Määrä</th>
+        <th>ota</th>
+    </tr>
+    <tr *ngFor="let shipment of shipments">
+        <td>{{shipment.Price}}</td>
+        <td>{{shipment.Date}}</td>
+        <td>{{shipment.ExpireDate}}</td>
+        <td>{{shipment.VendorName}}</td>
+        <td>{{shipment.SaapumiseranId}}</td>
+        <td>{{shipment.UnitStock}}</td>
+        <td><button type="submit" class="btn btn-info" (click)="takeProductFromStock(shipment.SaapumiseranId)">Ota tuote</button></td>
+        
+    </tr>
+</table>
+
+<!--
 <ul *ngFor="let shipment of shipments">
     <li>Hinta: {{shipment.Price}}</li>
     <li>Päivämäärä: {{shipment.Date}}</li>
@@ -9,5 +35,4 @@
     
     <li>Määrä: {{shipment.UnitStock}}</li>
     <li><button type="submit" class="btn btn-info" (click)="takeProductFromStock(shipment.SaapumiseranId)">Ota tuote</button></li>
- </ul>
-
+ </ul>-->
