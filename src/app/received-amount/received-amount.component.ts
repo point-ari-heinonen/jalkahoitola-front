@@ -23,7 +23,7 @@ export
 
 
   takeProductFromStock(id:any) {
-    console.log("takeProductFromStock:" + id)
+    //console.log("takeProductFromStock:" + id)
     this.httpClient.get(this.takeProductFromStockUrl + id)
       .subscribe((data:ReceivedAmount[]) => {
         this.shipments = data;
@@ -31,7 +31,7 @@ export
   }
 
   getShipment(id:any) {
-    console.log("GETSHIPMENT:" + id)
+    //console.log("GETSHIPMENT:" + id)
     this.httpClient.get(this.getShipmentUrl + id)
       .subscribe( (data: ReceivedAmount[]) => {
         console.log(data);

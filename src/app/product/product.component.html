@@ -17,19 +17,21 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-           <H2> Here comes the detailed information about the product</H2>
+           
             <ul class="product">
                 <li *ngFor="let item of oneProduct">
-                   <div> Group ID : {{item.GroupId}}</div>
-                   <div> Item Name : {{item.Nmae}}</div>
-                    Product ID : {{item.ProductId}}
+                   <!--<div> Group ID : {{item.GroupId}}</div>-->
+                   <div> Tuote : {{item.Nmae}}</div>
+                    <!--Product ID : {{item.ProductId}}-->
                     <app-received-amount [productId2]="item.ProductId"></app-received-amount>              
                   </li>
                 
         </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default"style= "float: left;" data-dismiss="modal">I only take one product</button>        
+          <button type="button" class="btn btn-default"style= "float: left;" data-dismiss="modal">I only take one product</button>
+          <button type="submit" class="btn btn-info" (click)="takeProductFromStock(shipment.SaapumiseranId)">Uusi tuote-erä</button>
+          
           <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">View</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Delete</button>
