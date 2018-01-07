@@ -1,9 +1,7 @@
 <div class="container">
-  
-  
+   
   </div>
-  
-  
+   
   <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Muokkaa</button>
   
   <!-- Modal -->
@@ -26,12 +24,11 @@
                     <app-received-amount [productId2]="item.ProductId"></app-received-amount>              
                   </li>
                 
-        </ul>
+            </ul>
         </div>
         <div class="modal-footer">
+          <app-add-received-amount [productId3]="productId"></app-add-received-amount>
           <button type="button" class="btn btn-default"style= "float: left;" data-dismiss="modal">I only take one product</button>
-          <button type="submit" class="btn btn-info" (click)="takeProductFromStock(shipment.SaapumiseranId)">Uusi tuote-erä</button>
-          
           <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">View</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Delete</button>

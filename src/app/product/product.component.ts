@@ -19,6 +19,7 @@ export class ProductComponent implements OnChanges{
     productUrl: string='http://pointfootapi.azurewebsites.net/api/product/';
     oneProduct: Product[];
     productId2: string;
+    productId3: string;
     //test
 
     getProduct(id: any){

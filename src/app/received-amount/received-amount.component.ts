@@ -15,12 +15,10 @@ export
   @Input()  productId2: number;
   shipments:  ReceivedAmount[];
   shipment:  ReceivedAmount;
-  isUpdatedFlag:  number;
-  isUpdatedListFlag:  number;
   constructor(private  httpClient: HttpClient) { }
   getShipmentUrl:  string = 'http://pointfootapi.azurewebsites.net/api/shipmentsforproduct/'
   takeProductFromStockUrl:  string  = "http://pointfootapi.azurewebsites.net/api/reduceproduct?saapumiseranid="
-
+  
 
   takeProductFromStock(id:any) {
     //console.log("takeProductFromStock:" + id)
@@ -34,7 +32,7 @@ export
     //console.log("GETSHIPMENT:" + id)
     this.httpClient.get(this.getShipmentUrl + id)
       .subscribe( (data: ReceivedAmount[]) => {
-        console.log(data);
+        //console.log(data);
         this.shipments = data;
       }
       )
