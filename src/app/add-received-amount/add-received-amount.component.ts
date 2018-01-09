@@ -22,7 +22,7 @@ export class AddReceivedAmountComponent implements OnInit {
 
   
   submitReceivedAmount(){
-    console.log("add-received-amount:" + this.productId3)
+    //console.log("add-received-amount:" + this.productId3)
     this.newShipment.productId = this.productId3;
     this.httpClient.post(this.addShipmentUrl,this.newShipment)
     .subscribe();
@@ -30,7 +30,7 @@ export class AddReceivedAmountComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("add-received-amount:" + this.productId3)
+    //console.log("add-received-amount:" + this.productId3)
   }
 
 }
