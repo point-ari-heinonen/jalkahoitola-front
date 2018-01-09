@@ -21,28 +21,28 @@ export class ProductListComponent implements OnChanges{
   
   
   getProductsInGroup(id: any){
-    //console.log("getProductsIngroup id:"+id);
+    console.log("getProductsIngroup id:"+id);
     this.httpClient.get(this.getProductsInGroupUrl+id)
     .subscribe(
       (data: Product[])=> {
-        //console.log(data);
+        console.log(data);
         this.products=data;
       }
     )
   }
   onProductSelect(product: Product){
     this.selectedProduct=product;
-    //console.log("onProductSelect");
+    console.log("onProductSelect");
   }
  ngOnChanges(): void{
-  //console.log("productlist.component.ts ngOnChanges groupid: " + this.groupId);
+  console.log("productlist.component.ts ngOnChanges groupid: " + this.groupId);
   if(this.groupId != undefined){
     this.getProductsInGroup(this.groupId);
    }
  }
  
   ngOnInit(): void {
-    //console.log("productlist.component.ts ngOnInit: " + this.groupId);
+    console.log("productlist.component.ts ngOnInit: " + this.groupId);
     if(this.groupId != undefined){
     this.getProductsInGroup(this.groupId);
     }

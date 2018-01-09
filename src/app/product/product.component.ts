@@ -17,23 +17,16 @@ export class ProductComponent implements OnChanges{
     @Input() productId: string;
     constructor(private httpClient: HttpClient){}
     productUrl: string='http://pointfootapi.azurewebsites.net/api/product/';
-    productRemoveUrl: string='http://pointfootapi.azurewebsites.net/api/removeproduct/';
     oneProduct: Product[];
     productId2: string;
-    productId3: string;
     //test
-    removeProduct(){
-        this.httpClient.get(this.productRemoveUrl+this.productId).subscribe();
-        console.log("Poistetaan:"+ this.productId);
-        this.getProduct(this.productId);
-    }
 
     getProduct(id: any){
-        //console.log("getProduct id:"+id);
+        console.log("getProduct id:"+id);
         this.httpClient.get(this.productUrl+id)
         .subscribe(
           (data: Product[])=> {
-            //console.log(data);
+            console.log(data);
             this.oneProduct=data;
             
             
@@ -43,7 +36,7 @@ export class ProductComponent implements OnChanges{
 
     ngOnChanges(): void{
         
-        //console.log("product.component ngOnChanges:" + this.productId)
+        console.log("product.component ngOnChanges:" + this.productId)
         if(this.productId != undefined){
             this.getProduct(this.productId);
         }
@@ -51,7 +44,7 @@ export class ProductComponent implements OnChanges{
     }
     
     ngOnInit(): void{
-        //console.log("product.component ngOnInit:" + this.productId)
+        console.log("product.component ngOnInit:" + this.productId)
         if(this.productId != undefined){
             this.getProduct(this.productId);
         }

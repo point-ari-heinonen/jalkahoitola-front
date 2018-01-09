@@ -9,8 +9,6 @@ import {ProductComponent} from './product/product.component';
 import {AddProductComponent} from './addproduct/addproduct.component';
 import {InterceptorModule} from './services/interceptor.module';
 import {ReceivedAmountComponent} from './received-amount/received-amount.component';
-import { AddReceivedAmountComponent } from './add-received-amount/add-received-amount.component';
-import { ProductCountComponent } from './product-count/product-count.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +17,6 @@ import { ProductCountComponent } from './product-count/product-count.component';
     ProductComponent,
     AddProductComponent,
     ReceivedAmountComponent,
-    AddReceivedAmountComponent,
-    ProductCountComponent,
     
   ],
   imports: [
