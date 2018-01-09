@@ -1,6 +1,7 @@
 
 <div *ngIf="groupId">
-    <h2>Ryhmään kuuluvat tuotteet:</h2>
+    <h2>Ryhmään kuuluvat tuotteet: </h2>
+    <p></p>
 </div>
    
      
@@ -15,7 +16,7 @@
             <th scope="col">Pakkauksen koko</th>
             <th scope="col">Pakkauksen tiedot</th>
             <th scope="col">Tuotteet varastossa</th>
-            <th scope="col">Tuotteen vanhenemispäivä</th>
+          <!--  <th scope="col">Tuotteen vanhenemispäivä</th> -->
           </tr>
         </thead>
         <tbody>
@@ -29,8 +30,9 @@
             <td>{{product.Description}}</td>
             <td>{{product.Quantity}}</td>
             <td>{{product.UnitOfMeasure}}</td>
-            <!--<td><app-received-amount [productId2]="product.ProductId"></app-received-amount></td>
-            -->
+            <td><app-product-count [productId4]="product.ProductId"></app-product-count></td>
+            <!--<td><app-received-amount [productId2]="product.ProductId"></app-received-amount></td> -->
+            
             </tr>
         </tbody>
       </table>

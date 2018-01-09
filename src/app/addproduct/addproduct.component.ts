@@ -25,12 +25,12 @@ export class AddProductComponent implements OnInit{
   
   submitProduct(){
     this.addProduct.GroupId = this.groupId2;
-    console.log("submitProduct "+this.addProduct.Nmae);
+    //console.log("submitProduct "+this.addProduct.Nmae);
     this.httpClient.post(this.postAddProductUrl,this.addProduct)
     .subscribe();
    }
   getProductsInGroup(id: any){
-    console.log("getProductsIngroup id:"+id);
+    //console.log("getProductsIngroup id:"+id);
     this.httpClient.get(this.getProductsInGroupUrl+id)
     .subscribe(
       (data: Product[])=> {
